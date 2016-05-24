@@ -7,24 +7,32 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+        <link rel="stylesheet" href="semantic/dist/semantic.min.css">
+        <style>
+            tr.current {
+                background-color: #dcffd1;
+            }
+            td.current {
+                background-color: #dcffd1;
+            }
+        </style>
     </head>
     <body class="pushable">
         <div class="pusher">
-        <div class="ui inverted vertical masthead center aligned segment" style="height:100vh">
-            <div class="ui text container">
-                <img class="ui centered circular medium image" src="img/header.jpg" alt="Header">
-                <h1 class="ui inverted header">火文狼, Vongola</h1>
-                <div class="ui orange basic button "><a href="#class_info"><i class="idea icon"></i>課表</a></div>
+            <div class="ui inverted vertical masthead center aligned segment" style="height:100vh">
+                <div class="ui text container">
+                    <img class="ui centered circular medium image" src="img/header.jpg" alt="Header">
+                    <h1 class="ui inverted header">火文狼, Vongola</h1>
+                    <div class="ui orange basic button "><a href="#class_info"><i class="idea icon"></i>課表</a></div>
+                </div>
             </div>
-        </div>
-        <div class="ui segment" id="class_info">
-        <div class="ui container">
-            <div class="ui large header center aligned">
-                <h2>105學年度第1學期課程資訊(課表)</h2>
-                <div>
-                    <br>
-                    <table class="ui celled table center aligned">
+            <div class="ui segment" id="class_info">
+                <div class="ui container">
+                    <div class="ui large header center aligned">
+                        <h2>105學年度第1學期課程資訊(課表)</h2>
+                        <small><span style="color:darkseagreen;font-size:0.8em;">綠色 - 已確認</span>、<span style="color:coral;font-size:0.8em;">橘色 - 兼任助教</span>、<span style="color:rosybrown;font-size:0.8em;">紅色 - 預選(未確認)</span></small>
+                    </div>
+                    <table class="ui selectable striped compact fixed table center aligned">
                         <thead>
                             <tr>
                                 <th>時間\節次</th>
@@ -50,8 +58,8 @@
                             </tr>
                             <tr>
                                 <td>第2節<br>09:10~10:00</td>
-                                <td></td>
-                                <td class="warning">計算機概論實習(一)<br>資電B29(電腦實習室)<br>蔡明峰</td>
+                                <td class="error">計算機概論實習(一)<br>資電B19<br>陳奕中</td>
+                                <td class="warning">計算機概論實習(一)<br>資電B29<br>蔡明峰</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -60,8 +68,8 @@
                             </tr>
                             <tr>
                                 <td>第3節<br>10:10~11:00</td>
-                                <td></td>
-                                <td class="warning">資電概論與倫理<br>---<br>蔡明峰</td>
+                                <td class="error">計算機概論實習(一)<br>資電B19<br>陳奕中</td>
+                                <td class="warning">資電概論與倫理<br>資訊一合<br>---</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -70,8 +78,8 @@
                             </tr>
                             <tr>
                                 <td>第4節<br>11:10~12:00</td>
-                                <td></td>
-                                <td class="warning">資電概論與倫理<br>---<br>蔡明峰</td>
+                                <td class="error">計算機概論實習(一)<br>資電B19<br>陳奕中</td>
+                                <td class="warning">資電概論與倫理<br>資訊一合<br>---</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -94,7 +102,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>班級活動<br>---<br>黃志銘</td>
+                                <td class="current">班級活動<br>---<br>黃志銘</td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -123,7 +131,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="warning">計算機概論實習(一)<br>資電125(電腦實習室)<br>蔡明峰</td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -133,7 +141,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="warning">計算機概論實習(一)<br>資電125(電腦實習室)<br>蔡明峰</td>
+                                <td class="warning">計算機概論實習(一)<br>資電125<br>蔡明峰</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -193,13 +201,15 @@
                     <br>
                     <div>
                         <h2>未排時間</h2>
-                        <p>專題研究(二)</p>
+                        <ul>
+                            <li>專題研究(二)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Javascript -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+        <script src="semantic/dist/semantic.min.js"></script>
     </body>
 </html>
