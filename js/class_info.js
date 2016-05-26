@@ -13,6 +13,12 @@ function parseClassInfo() {
                     $("td#"+key).addClass("error");
                 } else {
                     $("td#"+key).html(data["name"]+"<br>"+data["classroom"]+"<br>"+data["teacher"]);
+                    if(data.hasOwnProperty("code")){
+                        $("td#"+key).attr("data-content", "選課代碼："+data["code"]);
+                        $("td#"+key).attr("data-variation", "inverted");
+                        $("td#"+key).addClass("popup inver");
+                        $("td.popup").popup();
+                    }
                     if(data["status"] == 0){
                         $("td#"+key).addClass("current");
                     } else if (data["status"] == 1) {
