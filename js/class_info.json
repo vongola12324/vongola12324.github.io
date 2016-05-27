@@ -70,6 +70,20 @@
     "teacher": "鄭耀東",
     "status": -1
   },
+  "3-3": {
+    "code": 3405,
+    "name": "漫畫日語",
+    "classroom": "資電411",
+    "teacher": "李金娟",
+    "status": -1
+  },
+  "3-4": {
+    "code": 3405,
+    "name": "漫畫日語",
+    "classroom": "資電411",
+    "teacher": "李金娟",
+    "status": -1
+  },
   "3-8": {
     "code": 3449,
     "name": "雲端計算",
@@ -94,6 +108,34 @@
     "classroom": "資電235",
     "teacher": "---",
     "status": 2
+  },
+  "4-3": {
+    "code": 3415,
+    "name": "網路日語",
+    "classroom": "忠勤611",
+    "teacher": "林嘉純",
+    "status": -1
+  },
+  "4-4": {
+    "code": 3415,
+    "name": "網路日語",
+    "classroom": "忠勤611",
+    "teacher": "林嘉純",
+    "status": -1
+  },
+  "4-6": {
+    "code": 3417,
+    "name": "日語會話",
+    "classroom": "人言604",
+    "teacher": "陳雅暄",
+    "status": -1
+  },
+  "4-7": {
+    "code": 3417,
+    "name": "日語會話",
+    "classroom": "人言604",
+    "teacher": "陳雅暄",
+    "status": -1
   },
   "4-10": {
     "name": "計算機概論實習(一)",
