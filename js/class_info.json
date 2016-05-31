@@ -3,7 +3,7 @@
     "name": "計算機概論實習(一)",
     "classroom": "資電B19",
     "teacher": "陳奕中",
-    "status": -1
+    "status": 1
   },
   "1-3": {
     "code": 2433,
@@ -16,7 +16,7 @@
     "name": "計算機概論實習(一)",
     "classroom": "資電B19",
     "teacher": "陳奕中",
-    "status": -1
+    "status": 1
   },
   "2-1": {
     "name": "計算機概論實習(一)",
@@ -92,22 +92,22 @@
     "status": -1
   },
   "3-11": {
-    "name": "系程社課",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
+    "name": "資料結構實習",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
   },
   "3-12": {
-    "name": "系程社課",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
+    "name": "資料結構實習",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
   },
   "3-13": {
-    "name": "系程社課",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
+    "name": "資料結構實習",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
   },
   "4-3": {
     "code": 3415,
