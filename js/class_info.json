@@ -31,14 +31,14 @@
   },
   "2-3": {
     "name": "資電概論與倫理",
-    "classroom": "---",
-    "teacher": "---",
+    "classroom": "資電B22",
+    "teacher": "蔡明峰/洪維志/陳奕中",
     "status": 1
   },
   "2-4": {
     "name": "資電概論與倫理",
-    "classroom": "---",
-    "teacher": "---",
+    "classroom": "資電B22",
+    "teacher": "蔡明峰/洪維志/陳奕中",
     "status": 1
   },
   "2-6": {
@@ -64,6 +64,18 @@
     "classroom": "科航202",
     "teacher": "鄭耀東",
     "status": 0
+  },
+  "2-12": {
+    "name": "黑客社社課(Arduino)",
+    "classroom": "資電235",
+    "teacher": "---",
+    "status": 2
+  },
+  "2-13": {
+    "name": "黑客社社課(Arduino)",
+    "classroom": "資電235",
+    "teacher": "---",
+    "status": 2
   },
   "3-3": {
     "name": "漫畫日語",
@@ -101,83 +113,29 @@
     "teacher": "陳奕中",
     "status": 1
   },
-  "4-2": {
-    "name": "高等通訊與網路",
-    "classroom": "資電205",
-    "teacher": "蘇宗安",
-    "code": 1686,
-    "status": -1
-  },
-  "4-3": {
-    "name": "高等通訊與網路",
-    "classroom": "資電205",
-    "teacher": "蘇宗安",
-    "code": 1686,
-    "status": -1
-  },
-  "4-4": {
-    "name": "高等通訊與網路",
-    "classroom": "資電205",
-    "teacher": "蘇宗安",
-    "code": 1686,
-    "status": -1
-  },
   "4-6": {
     "name": "作業系統",
     "classroom": "資電B04",
     "teacher": "賴坤助",
     "status": 0
   },
-  "4-7": {
-    "name": "作業系統",
-    "classroom": "資電B04",
-    "teacher": "賴坤助",
-    "status": 0
-  },
-  "4-8": {
-    "name": "作業系統",
-    "classroom": "資電B04",
-    "teacher": "賴坤助",
-    "status": 0
-  },
-  "4-10": {
-    "name": "計算機概論實習(一)",
-    "classroom": "資電125",
-    "teacher": "蔡明峰",
-    "status": 1
-  },
-  "2-12": {
-    "name": "黑客社社課(Arduino)",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
-  },
-  "2-13": {
-    "name": "黑客社社課(Arduino)",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
-  },
   "5-2": {
     "name": "演算法設計與分析",
     "classroom": "資電205",
     "teacher": "許芳榮",
-    "code": 1692,
-    "status": -1
+    "status": 3
   },
   "5-3": {
     "name": "演算法設計與分析",
     "classroom": "資電205",
     "teacher": "許芳榮",
-    "code": 1692,
-    "status": -1
+    "status": 3
   },
   "5-4": {
     "name": "演算法設計與分析",
     "classroom": "資電205",
     "teacher": "許芳榮",
-    "code": 1692,
-    "status": -1
+    "status": 3
   },
   "5-6": {
     "name": "班級活動",

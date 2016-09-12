@@ -19,12 +19,15 @@ function parseClassInfo() {
                         $("td#"+key).addClass("popup inver");
                         $("td.popup").popup();
                     }
-                    if(data["status"] == 0){
+                    var status = data["status"];
+                    if(status == 0){
                         $("td#"+key).addClass("current");
-                    } else if (data["status"] == 1) {
+                    } else if (status == 1) {
                         $("td#"+key).addClass("ta");
-                    } else if (data["status"] == 2) {
+                    } else if (status == 2) {
                         $("td#"+key).addClass("club");
+                    } else if (status == 3){
+                        $("td#"+key).addClass("master");
                     } else {
                         $("td#"+key).addClass("unsure");
                     }
