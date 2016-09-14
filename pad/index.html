@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Editable work!</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/notosanstc.css");">
+        <style>
+            html, body {
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                display: table;
+                font-weight: 100;
+                font-family: 'Lato', 'Noto Sans TC',sans-serif;
+                font-size: 150px;
+                /*background-color: black;*/
+                /*color: red;*/
+            }
+
+            .container {
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+                min-height: 100vh;
+                min-width: 100vh;
+            }
+
+            .content {
+                text-align: center;
+                display: inline-block;
+                word-break: break-all;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" onclick="document.getElementById('editable').contentEditable='true';">
+            <div class="content" id="editable" onclick="editable()">
+                It works!
+            </div>
+        </div>
+        <script>
+            function editable() {
+                var div = document.getElementById("editable");
+                div.contentEditable = 'true';
+//                while (div.offsetWidth > window.width || div.offsetHeight > window.height) {
+//                    document.body.style.fontSize = document.body.style.fontSize * 0.8;
+//                }
+//                while (div.offsetWidth < window.width * 0.7 || div.offsetHeight < window.height * 0.) {
+//                    document.body.style.fontSize = document.body.style.fontSize * 1.2;
+//                }
+            }
+        </script>
+    </body>
+</html>
