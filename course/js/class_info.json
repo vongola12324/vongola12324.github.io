@@ -119,6 +119,18 @@
     "teacher": "賴坤助",
     "status": 0
   },
+  "4-7": {
+    "name": "作業系統",
+    "classroom": "資電B04",
+    "teacher": "賴坤助",
+    "status": 0
+  },
+  "4-8": {
+    "name": "作業系統",
+    "classroom": "資電B04",
+    "teacher": "賴坤助",
+    "status": 0
+  },
   "5-2": {
     "name": "演算法設計與分析",
     "classroom": "資電205",
@@ -144,22 +156,22 @@
     "status": 0
   },
   "5-8": {
-    "name": "資策會社課",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "黃志銘",
+    "status": 1
   },
   "5-9": {
-    "name": "資策會社課",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "黃志銘",
+    "status": 1
   },
   "5-10": {
-    "name": "資策會社課",
-    "classroom": "資電235",
-    "teacher": "---",
-    "status": 2
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "黃志銘",
+    "status": 1
   },
   "Other": [
     "專題研究(二)"
