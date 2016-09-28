@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Editable work!</title>
+        <title>A Pad</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -66,6 +66,7 @@
                 // Timing
                 if (aryPara["clock"]) {
                     if (aryPara["clock"] == "countdown" && aryPara["countdown"]) {
+                        document.title = "Timer: Countdown";
                         var days = aryPara["countdown"].split("d").length > 1 ? aryPara["countdown"].split("d") : [0, aryPara["countdown"].split("d")[0]];
                         var hours = days[1].split("h").length > 1 ? days[1].split("h") : [0, days[1].split("h")[0]];
                         var minutes = hours[1].split("m").length > 1 ? hours[1].split("m") : [0, hours[1].split("m")[0]];
@@ -74,6 +75,7 @@
                     } else if (aryPara["clock"] == "timing") {
                         // TODO: Timing
                     } else {
+                        document.title = "Clock";
                         showClock();
                     }
                 }
@@ -82,7 +84,7 @@
                 if (aryPara["title"]) {
                     document.title = aryPara["title"];
                 }
-                if (document.getElementById("editable").innerHTML = "") {
+                if (!document.getElementById("editable").innerHTML) {
                     document.getElementById("editable").innerHTML = "It works!";
                 }
             }
@@ -108,39 +110,27 @@
                             + ("0"+currentdate.getHours()).slice(-2) + " : "
                             + ("0"+currentdate.getMinutes()).slice(-2) + " : "
                             + ("0"+currentdate.getSeconds()).slice(-2);
-                    document.title = "Clock: "
-                            + currentdate.getFullYear() + " / "
-                            + ("0"+currentdate.getMonth()).slice(-2) + " / "
-                            + ("0"+currentdate.getDate()).slice(-2) + " "
-                            + ("0"+currentdate.getHours()).slice(-2) + " : "
-                            + ("0"+currentdate.getMinutes()).slice(-2) + " : "
-                            + ("0"+currentdate.getSeconds()).slice(-2);
                 }, 1000);
             }
 
             function showCountdown (days, hours, mins, secs) {
                 var target = document.getElementById("editable");
                 target.innerHTML = "";
-                document.title = "Countdown: ";
                 if (days > 0) {
                     target.innerHTML = days + "day(s), "
-                    document.title += days + "day(s), ";
                 }
                 if (hours >= 0) {
                     target.innerHTML += ("0" + hours).slice(-2) + " : ";
-                    document.title += ("0" + hours).slice(-2) + " : ";
                 }
                 if (mins >= 0) {
                     target.innerHTML += ("0" + mins).slice(-2) + " : ";
-                    document.title += ("0" + mins).slice(-2) + " : ";
                 }
                 if (secs >= 0) {
                     target.innerHTML += ("0" + secs).slice(-2) + " left.";
-                    document.title += ("0" + secs).slice(-2) + " left.";
                 }
                 if (days == 0 && hours == 0 && mins == 0 && secs == 0) {
                     target.innerHTML = "Time's up!";
-                    document.title += "Time's up!";
+                    document.title = "Timer: Time's up!";
                 }
             }
 
@@ -154,25 +144,28 @@
                         s = s - 1;
                     }
                     if (s < 0) {
-                        s = 59;
                         if (m > 0) {
-                            m = m - 1;
+                            m -= 1;
+                            s = 59;
+                        } else {
+                            if (h > 0) {
+                                h -= 1;
+                                m = 59;
+                                s = 59;
+                            } else {
+                                if (d > 0) {
+                                    d -= 1;
+                                    h = 23;
+                                    m = 59;
+                                    s = 59;
+                                } else {
+                                    s = 0;
+                                    m = 0;
+                                    h = 0;
+                                    d = 0;
+                                }
+                            }
                         }
-                    }
-                    if (m < 0) {
-                        m = 59;
-                        if (h > 0) {
-                            h = h - 1;
-                        }
-                    }
-                    if (h < 0) {
-                        h = 23;
-                        if (d > 0) {
-                            d = d - 1;
-                        }
-                    }
-                    if (d < 0 ) {
-                        d = 0;
                     }
                     showCountdown(d, h, m, s);
                 }, 1000);
