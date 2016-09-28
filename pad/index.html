@@ -42,9 +42,7 @@
     </head>
     <body>
         <div class="container" onclick="document.getElementById('editable').contentEditable='true';">
-            <div class="content" id="editable" onclick="editable()">
-                It works!
-            </div>
+            <div class="content" id="editable" onclick="editable()"></div>
         </div>
         <script>
             var strUrl = location.search;
@@ -57,10 +55,37 @@
                 for (var i = 0; i < getPara.length; i++) {
                     ParaVal = getPara[i].split("=");
                     aryPara.push(ParaVal[0]);
-                    aryPara[ParaVal[0]] = ParaVal[1];
+                    aryPara[ParaVal[0]] = decodeURI(ParaVal[1]);
                 }
-                if (aryPara["text"])
-                    document.getElementById("editable").innerHTML = decodeURI(aryPara["text"]);
+                if (aryPara["text"]) {
+                    document.getElementById("editable").innerHTML = aryPara["text"];
+                    document.title = aryPara["text"];
+                }
+
+
+                // Timing
+                if (aryPara["clock"]) {
+                    if (aryPara["clock"] == "countdown" && aryPara["countdown"]) {
+                        var days = aryPara["countdown"].split("d").length > 1 ? aryPara["countdown"].split("d") : [0, aryPara["countdown"].split("d")[0]];
+                        var hours = days[1].split("h").length > 1 ? days[1].split("h") : [0, days[1].split("h")[0]];
+                        var minutes = hours[1].split("m").length > 1 ? hours[1].split("m") : [0, hours[1].split("m")[0]];
+                        var seconds = minutes[1].split("s")[0];
+                        countdown(days[0], hours[0], minutes[0], parseInt(seconds)+1);
+
+                    } else if (aryPara["clock"] == "timing") {
+                        // TODO: Timing
+                    } else {
+                        showClock();
+                    }
+                }
+
+                // Must be the last one
+                if (aryPara["title"]) {
+                    document.title = aryPara["title"];
+                }
+                if (document.getElementById("editable").innerHTML = "") {
+                    document.getElementById("editable").innerHTML = "It works!";
+                }
             }
 
             function editable() {
@@ -72,6 +97,72 @@
 //                while (div.offsetWidth < window.width * 0.7 || div.offsetHeight < window.height * 0.) {
 //                    document.body.style.fontSize = document.body.style.fontSize * 1.2;
 //                }
+            }
+
+            function showClock () {
+                setInterval(function () {
+                    var currentdate = new Date();
+                    document.getElementById("editable").innerHTML =
+                              currentdate.getFullYear() + " / "
+                            + ("0"+currentdate.getMonth()).slice(-2) + " / "
+                            + ("0"+currentdate.getDate()).slice(-2) + "<br>"
+                            + ("0"+currentdate.getHours()).slice(-2) + " : "
+                            + ("0"+currentdate.getMinutes()).slice(-2) + " : "
+                            + ("0"+currentdate.getSeconds()).slice(-2);
+                }, 1000);
+            }
+
+            function showCountdown (days, hours, mins, secs) {
+                var target = document.getElementById("editable");
+                target.innerHTML = "";
+                if (days > 0) {
+                    target.innerHTML = days + "day(s), ";
+                }
+                if (hours > 0) {
+                    target.innerHTML = target.innerHTML + ("0" + hours).slice(-2) + " : ";
+                }
+                if (mins > 0) {
+                    target.innerHTML = target.innerHTML + ("0" + mins).slice(-2) + " : ";
+                }
+                if (secs > 0) {
+                    target.innerHTML = target.innerHTML + ("0" + secs).slice(-2) + " left.";
+                }
+                if (days == 0 && hours == 0 && mins == 0 && secs == 0) {
+                    target.innerHTML = "Time's up!";
+                }
+            }
+
+            function countdown (days, hours, mins, secs) {
+                var s = secs || 0;
+                var m = mins || 0;
+                var h = hours || 0;
+                var d = days || 0;
+                setInterval(function () {
+                    s = s - 1;
+                    console.log(s)
+                    if (s < 0) {
+                        s = 59;
+                        if (m > 0) {
+                            m = m - 1;
+                        }
+                    }
+                    if (m < 0) {
+                        m = 59;
+                        if (h > 0) {
+                            h = h - 1;
+                        }
+                    }
+                    if (h < 0) {
+                        h = 23;
+                        if (d > 0) {
+                            d = d - 1;
+                        }
+                    }
+                    if (d < 0 ) {
+                        d = 0;
+                    }
+                    showCountdown(d, h, m, s);
+                }, 1000);
             }
         </script>
     </body>
