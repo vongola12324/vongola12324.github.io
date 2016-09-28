@@ -60,7 +60,7 @@
                     aryPara[ParaVal[0]] = ParaVal[1];
                 }
                 if (aryPara["text"])
-                    document.getElementById("editable").innerHTML = aryPara["text"]
+                    document.getElementById("editable").innerHTML = decodeURI(aryPara["text"]);
             }
 
             function editable() {
