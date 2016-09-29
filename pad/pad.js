@@ -15,96 +15,104 @@ function init () {
       aryPara[ ParaVal[ 0 ] ] = decodeURI(ParaVal[ 1 ]);
     }
 
-    // Image Pad
-    if ("image" in aryPara) {
-      var imgUrl = encodeURI(aryPara["image"]);
-      // console.log(aryPara["image"]);
-      if (imgUrl != "undefined") {
-        document.getElementById("editable").innerHTML = "<img src=\"" + imgUrl + "\" style='width: 100%; height: auto;'/>"
-      } else {
-        document.getElementById("editable").innerText = "404<br>Image Not Found!";
+    // Help
+    if ("help" in aryPara) {
+      alert("Will be available soon...");
+    } else {
+      // Add feature here
+
+      // Image Pad
+      if ("image" in aryPara) {
+        var imgUrl = aryPara["image"];
+        // console.log(aryPara["image"]);
+        if (imgUrl != "undefined") {
+          document.getElementById("editable").innerHTML = "<img src=\"" + imgUrl + "\" style='width: 100%; height: auto;'/>"
+        } else {
+          document.getElementById("editable").innerText = "404<br>Image Not Found!";
+        }
+        document.title = "Image Pad"
       }
-      document.title = "Image Pad"
-    }
 
-    // Text Pad
-    if ("text" in aryPara) {
-      document.getElementById("editable").innerText = aryPara[ "text" ];
-      document.title = "Text Pad";
-    }
-
-    // Time Pad
-    if ("countdown" in aryPara) {
-      document.title = "Timer: Countdown";
-      if (aryPara[ "countdown" ] === "undefined") {
-        setTime(0, 0, 0, 30);
-      } else {
-        var days = aryPara[ "countdown" ].split("d").length > 1 ? aryPara[ "countdown" ].split("d") : [ 0, aryPara[ "countdown" ].split("d")[ 0 ] ];
-        var hours = days[ 1 ].split("h").length > 1 ? days[ 1 ].split("h") : [ 0, days[ 1 ].split("h")[ 0 ] ];
-        var minutes = hours[ 1 ].split("m").length > 1 ? hours[ 1 ].split("m") : [ 0, hours[ 1 ].split("m")[ 0 ] ];
-        var seconds = minutes[ 1 ].split("s")[ 0 ] ? minutes[ 1 ].split("s")[ 0 ] : 0 || 0;
-
-        days = parseInt(days[0]);
-        hours = parseInt(hours[0]);
-        minutes = parseInt(minutes[0]);
-        seconds = parseInt(seconds);
-
-        // Check time over 60s/60m/24h
-        while (seconds >= 60) {
-          minutes += 1;
-          seconds -= 60;
-        }
-        while (minutes >= 60) {
-          hours += 1;
-          minutes -= 60;
-        }
-        while (hours >= 24) {
-          days += 1;
-          hours -= 24;
-        }
-
-        setTime(days, hours, minutes, seconds);
+      // Text Pad
+      if ("text" in aryPara) {
+        document.getElementById("editable").innerText = aryPara[ "text" ];
+        document.title = "Text Pad";
       }
-      document.getElementById("splitDiv").style.display = "block";
-      start_button.style.display = "inline-block";
-      stop_button.addEventListener('click', function () {
-        start_button.style.display = "inline-block";
-        stop_button.style.display = "none";
-        if (timeInv) {
-          clearInterval(timeInv);
+
+      // Time Pad
+      if ("countdown" in aryPara) {
+        document.title = "Timer: Countdown";
+        if (aryPara[ "countdown" ] === "undefined") {
+          setTime(0, 0, 0, 30);
+        } else {
+          var days = aryPara[ "countdown" ].split("d").length > 1 ? aryPara[ "countdown" ].split("d") : [ 0, aryPara[ "countdown" ].split("d")[ 0 ] ];
+          var hours = days[ 1 ].split("h").length > 1 ? days[ 1 ].split("h") : [ 0, days[ 1 ].split("h")[ 0 ] ];
+          var minutes = hours[ 1 ].split("m").length > 1 ? hours[ 1 ].split("m") : [ 0, hours[ 1 ].split("m")[ 0 ] ];
+          var seconds = minutes[ 1 ].split("s")[ 0 ] ? minutes[ 1 ].split("s")[ 0 ] : 0 || 0;
+
+          days = parseInt(days[0]);
+          hours = parseInt(hours[0]);
+          minutes = parseInt(minutes[0]);
+          seconds = parseInt(seconds);
+
+          // Check time over 60s/60m/24h
+          while (seconds >= 60) {
+            minutes += 1;
+            seconds -= 60;
+          }
+          while (minutes >= 60) {
+            hours += 1;
+            minutes -= 60;
+          }
+          while (hours >= 24) {
+            days += 1;
+            hours -= 24;
+          }
+
+          setTime(days, hours, minutes, seconds);
         }
-      });
-      start_button.addEventListener('click', function () {
-        start_button.style.display = "none";
-        stop_button.style.display = "inline-block";
-        timeInv = setInterval(countdown, 1000);
-      });
-    } else if ("timing" in aryPara) {
-      document.title = "Timer: Timing";
-      setTime(0, 0, 0, 0);
-      document.getElementById("splitDiv").style.display = "block";
-      start_button.style.display = "inline-block";
-      stop_button.addEventListener('click', function () {
+        document.getElementById("splitDiv").style.display = "block";
         start_button.style.display = "inline-block";
-        stop_button.style.display = "none";
-        if (timeInv) {
-          clearInterval(timeInv);
-        }
-      });
-      start_button.addEventListener('click', function () {
-        start_button.style.display = "none";
-        stop_button.style.display = "inline-block";
-        timeInv = setInterval(timing, 1000);
-      });
-    } else if ("clock" in aryPara) {
-      document.title = "Clock";
-      showClock();
+        stop_button.addEventListener('click', function () {
+          start_button.style.display = "inline-block";
+          stop_button.style.display = "none";
+          if (timeInv) {
+            clearInterval(timeInv);
+          }
+        });
+        start_button.addEventListener('click', function () {
+          start_button.style.display = "none";
+          stop_button.style.display = "inline-block";
+          timeInv = setInterval(countdown, 1000);
+        });
+      } else if ("timing" in aryPara) {
+        document.title = "Timer: Timing";
+        setTime(0, 0, 0, 0);
+        document.getElementById("splitDiv").style.display = "block";
+        start_button.style.display = "inline-block";
+        stop_button.addEventListener('click', function () {
+          start_button.style.display = "inline-block";
+          stop_button.style.display = "none";
+          if (timeInv) {
+            clearInterval(timeInv);
+          }
+        });
+        start_button.addEventListener('click', function () {
+          start_button.style.display = "none";
+          stop_button.style.display = "inline-block";
+          timeInv = setInterval(timing, 1000);
+        });
+      } else if ("clock" in aryPara) {
+        document.title = "Clock";
+        showClock();
+      }
+
+      // Must be the last one
+      if (aryPara[ "title" ]) {
+        document.title = aryPara[ "title" ];
+      }
     }
 
-    // Must be the last one
-    if (aryPara[ "title" ]) {
-      document.title = aryPara[ "title" ];
-    }
     // FIXME: If not use setTimeout, the "It works" will show before clock.
     setTimeout(function () {
       if (document.getElementById("editable").innerText == "Loading...") {
