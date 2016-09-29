@@ -14,10 +14,9 @@ function init () {
       aryPara.push(ParaVal[ 0 ]);
       aryPara[ ParaVal[ 0 ] ] = decodeURI(ParaVal[ 1 ]);
     }
-    if (aryPara[ "text" ]) {
-      // console.log(aryPara["text"]);
+    if ("text" in aryPara) {
       document.getElementById("editable").innerText = aryPara[ "text" ];
-      document.title = aryPara[ "text" ];
+      document.title = "Text Pad";
     }
 
     // Timing
