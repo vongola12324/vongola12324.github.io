@@ -124,6 +124,20 @@ function countdown () {
   m = parseInt(m || 0);
   s = parseInt(s || 0);
 
+  // Check time over 60s/60m/24h
+  while (s >= 60) {
+    m += 1;
+    s -= 60;
+  }
+  while (m >= 60) {
+    h += 1;
+    m -= 60;
+  }
+  while (h >= 24) {
+    d += 1;
+    h -= 24;
+  }
+
   if (s > 0 || m > 0 || h > 0 || d > 0) {
     s -= 1;
   }
@@ -160,6 +174,21 @@ function timing () {
   var s = parseInt(data[ 2 ]);
   var m = parseInt(data[ 1 ]);
   var h = parseInt(data[ 0 ]);
+
+  // Check time over 60s/60m/24h
+  while (s >= 60) {
+    m += 1;
+    s -= 60;
+  }
+  while (m >= 60) {
+    h += 1;
+    m -= 60;
+  }
+  while (h >= 24) {
+    d += 1;
+    h -= 24;
+  }
+
   s += 1;
   if (s >= 60) {
     s -= 60;
