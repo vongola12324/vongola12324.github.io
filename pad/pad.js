@@ -172,8 +172,8 @@ function showCountdown (days, hours, mins, secs) {
 
 function countdown () {
   var target = document.getElementById("editable");
-  var d = target.innerHTML.split("day(s),").length > 1 ? target.innerText.split("day(s),") : [ 0, target.innerText.split("day(s), ")[ 0 ] ];
-  var time = d[ 1 ].split(" :");
+  var d = target.innerHTML.split("day(s), ").length > 1 ? target.innerHTML.split("day(s), ") : [ 0, target.innerText.split("day(s), ")[ 0 ] ];
+  var time = d[ 1 ].split(" : ");
   d = d[ 0 ];
   var s = time[ 2 ];
   var m = time[ 1 ];
@@ -229,7 +229,7 @@ function countdown () {
 
 function timing () {
   var target = document.getElementById("editable");
-  var data = target.innerText.split(" :");
+  var data = target.innerHTML.split(" : ");
   var s = parseInt(data[ 2 ]);
   var m = parseInt(data[ 1 ]);
   var h = parseInt(data[ 0 ]);
@@ -265,17 +265,17 @@ function timing () {
 
 function setTime (days, hours, mins, secs) {
   var target = document.getElementById("editable");
-  target.innerText = "";
+  target.innerHTML = "";
   if (days > 0) {
-    target.innerText = days + "day(s), "
+    target.innerHTML = days + "day(s), "
   }
   if (hours >= 0) {
-    target.innerText += ("0" + hours).slice(-2) + " : ";
+    target.innerHTML += ("0" + hours).slice(-2) + " : ";
   }
   if (mins >= 0) {
-    target.innerText += ("0" + mins).slice(-2) + " : ";
+    target.innerHTML += ("0" + mins).slice(-2) + " : ";
   }
   if (secs >= 0) {
-    target.innerText += ("0" + secs).slice(-2);
+    target.innerHTML += ("0" + secs).slice(-2);
   }
 }
