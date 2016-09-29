@@ -24,7 +24,7 @@ function init () {
               "<thead><tr><th>Key</th><th>Value</th><th>Function</th></tr></thead>" +
               "<tbody>" +
               "<tr><td>help</td><td>(null)</td><td>Open this page.</td></tr>" +
-              "<tr><td>text</td><td>(text)</td>Open an editable pad with (text)</tr>" +
+              "<tr><td>text</td><td>(text)</td><td>Open an editable pad with (text)</td></tr>" +
               "<tr><td>clock</td><td>(null)</td><td>Open a clock.</td></tr>" +
               "<tr><td>timing</td><td>(null)</td><td>Open a timer.</td></tr>" +
               "<tr><td>countdown</td><td>(?d?h?m?s)</td><td>Open a countdown timer.</td></tr>" +
