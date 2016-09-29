@@ -23,8 +23,9 @@ function init () {
 
       // Image Pad
       if ("image" in aryPara) {
-        var imgUrl = aryPara["image"];
-        // console.log(aryPara["image"]);
+        var imgUrl = decodeURI(aryPara["image"]);
+        imgUrl = imgUrl.replace(/%3A/g, ':').replace(/%2F/g, '/');
+        // console.log(imgUrl)
         if (imgUrl != "undefined") {
           document.getElementById("editable").innerHTML = "<img src=\"" + imgUrl + "\" style='width: 100%; height: auto;'/>"
         } else {
