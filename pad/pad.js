@@ -42,7 +42,6 @@ function init () {
       if ("image" in aryPara) {
         var imgUrl = decodeURI(aryPara[ "image" ]);
         imgUrl = imgUrl.replace(/%3A/g, ':').replace(/%2F/g, '/');
-        // console.log(imgUrl)
         if (imgUrl != "undefined") {
           document.getElementById("editable").innerHTML = "<img src=\"" + imgUrl + "\" style='width: 100%; height: auto;'/>"
         } else {
@@ -173,7 +172,6 @@ function showCountdown (days, hours, mins, secs) {
 
 function countdown () {
   var target = document.getElementById("editable");
-  console.log(target.innerText);
   var d = target.innerHTML.split("day(s),").length > 1 ? target.innerText.split("day(s),") : [ 0, target.innerText.split("day(s), ")[ 0 ] ];
   var time = d[ 1 ].split(" :");
   d = d[ 0 ];
@@ -262,7 +260,6 @@ function timing () {
       }
     }
   }
-  // console.log(s + "," + m + "," + h);
   setTime(0, h, m, s);
 }
 
