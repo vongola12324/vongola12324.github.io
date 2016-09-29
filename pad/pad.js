@@ -29,7 +29,27 @@ function init () {
         var hours = days[ 1 ].split("h").length > 1 ? days[ 1 ].split("h") : [ 0, days[ 1 ].split("h")[ 0 ] ];
         var minutes = hours[ 1 ].split("m").length > 1 ? hours[ 1 ].split("m") : [ 0, hours[ 1 ].split("m")[ 0 ] ];
         var seconds = minutes[ 1 ].split("s")[ 0 ] ? minutes[ 1 ].split("s")[ 0 ] : 0 || 0;
-        setTime(parseInt(days[ 0 ]), parseInt(hours[ 0 ]), parseInt(minutes[ 0 ]), parseInt(seconds));
+
+        days = parseInt(days[0]);
+        hours = parseInt(hours[0]);
+        minutes = parseInt(minutes[0]);
+        seconds = parseInt(seconds);
+
+        // Check time over 60s/60m/24h
+        while (seconds >= 60) {
+          minutes += 1;
+          seconds -= 60;
+        }
+        while (minutes >= 60) {
+          hours += 1;
+          minutes -= 60;
+        }
+        while (hours >= 24) {
+          days += 1;
+          hours -= 24;
+        }
+
+        setTime(days, hours, minutes, seconds);
       }
       document.getElementById("splitDiv").style.display = "block";
       start_button.style.display = "inline-block";
