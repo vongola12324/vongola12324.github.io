@@ -173,8 +173,9 @@ function showCountdown (days, hours, mins, secs) {
 
 function countdown () {
   var target = document.getElementById("editable");
-  var d = target.innerText.split("day(s), ").length > 1 ? target.innerText.split("day(s), ") : [ 0, target.innerText.split("day(s), ")[ 0 ] ];
-  var time = d[ 1 ].split(" : ");
+  console.log(target.innerText);
+  var d = target.innerHTML.split("day(s),").length > 1 ? target.innerText.split("day(s),") : [ 0, target.innerText.split("day(s), ")[ 0 ] ];
+  var time = d[ 1 ].split(" :");
   d = d[ 0 ];
   var s = time[ 2 ];
   var m = time[ 1 ];
@@ -230,7 +231,7 @@ function countdown () {
 
 function timing () {
   var target = document.getElementById("editable");
-  var data = target.innerText.split(" : ");
+  var data = target.innerText.split(" :");
   var s = parseInt(data[ 2 ]);
   var m = parseInt(data[ 1 ]);
   var h = parseInt(data[ 0 ]);
@@ -261,7 +262,7 @@ function timing () {
       }
     }
   }
-  console.log(s + "," + m + "," + h);
+  // console.log(s + "," + m + "," + h);
   setTime(0, h, m, s);
 }
 
