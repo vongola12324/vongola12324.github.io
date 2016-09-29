@@ -14,12 +14,26 @@ function init () {
       aryPara.push(ParaVal[ 0 ]);
       aryPara[ ParaVal[ 0 ] ] = decodeURI(ParaVal[ 1 ]);
     }
+
+    // Image Pad
+    if ("image" in aryPara) {
+      var imgUrl = encodeURI(aryPara["image"]);
+      // console.log(aryPara["image"]);
+      if (imgUrl != "undefined") {
+        document.getElementById("editable").innerHTML = "<img src=\"" + imgUrl + "\" style='width: 100%; height: auto;'/>"
+      } else {
+        document.getElementById("editable").innerText = "404<br>Image Not Found!";
+      }
+      document.title = "Image Pad"
+    }
+
+    // Text Pad
     if ("text" in aryPara) {
       document.getElementById("editable").innerText = aryPara[ "text" ];
       document.title = "Text Pad";
     }
 
-    // Timing
+    // Time Pad
     if ("countdown" in aryPara) {
       document.title = "Timer: Countdown";
       if (aryPara[ "countdown" ] === "undefined") {
