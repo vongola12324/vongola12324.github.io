@@ -19,13 +19,13 @@
   },
   "2-1": {
     "name": "計算機概論實習(一)",
-    "classroom": "資電B29",
+    "classroom": "紀念207",
     "teacher": "蔡明峰",
     "status": 1
   },
   "2-2": {
     "name": "計算機概論實習(一)",
-    "classroom": "資電B29",
+    "classroom": "紀念207",
     "teacher": "蔡明峰",
     "status": 1
   },
@@ -130,6 +130,12 @@
     "classroom": "資電B04",
     "teacher": "賴坤助",
     "status": 0
+  },
+  "4-10": {
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "蔡明峰",
+    "status": 1
   },
   "5-2": {
     "name": "演算法設計與分析",
