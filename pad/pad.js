@@ -71,9 +71,12 @@ function init () {
     if (aryPara[ "title" ]) {
       document.title = aryPara[ "title" ];
     }
-    if (!document.getElementById("editable").innerHTML) {
-      document.getElementById("editable").innerHTML = "It works!";
-    }
+    // FIXME: If not use setTimeout, the "It works" will show before clock.
+    setTimeout(function () {
+      if (document.getElementById("editable").innerHTML == "Loading...") {
+        document.getElementById("editable").innerHTML = "It works!";
+      }
+    }, 1000);
   }
 }
 function editable () {
