@@ -17,13 +17,30 @@ function init () {
 
     // Help
     if ("help" in aryPara) {
-      alert("Will be available soon...");
+      swal({
+        title: "Help!",
+        text: "<h3>Here are some useful feature:</h3><br>" +
+              "<table>" +
+              "<thead><tr><th>Key</th><th>Value</th><th>Function</th></tr></thead>" +
+              "<tbody>" +
+              "<tr><td>help</td><td>(null)</td><td>Open this page.</td></tr>" +
+              "<tr><td>text</td><td>(text)</td>Open an editable pad with (text)</tr>" +
+              "<tr><td>clock</td><td>(null)</td><td>Open a clock.</td></tr>" +
+              "<tr><td>timing</td><td>(null)</td><td>Open a timer.</td></tr>" +
+              "<tr><td>countdown</td><td>(?d?h?m?s)</td><td>Open a countdown timer.</td></tr>" +
+              "<tr><td>image</td><td>(url)</td><td>Open an image pad with the specify image.</td></tr>" +
+              "</tbody>" +
+              "</table>",
+        html: true,
+        type: "info",
+        confirmButtonText: "Try it!"
+      });
     } else {
       // Add feature here
 
       // Image Pad
       if ("image" in aryPara) {
-        var imgUrl = decodeURI(aryPara["image"]);
+        var imgUrl = decodeURI(aryPara[ "image" ]);
         imgUrl = imgUrl.replace(/%3A/g, ':').replace(/%2F/g, '/');
         // console.log(imgUrl)
         if (imgUrl != "undefined") {
@@ -51,9 +68,9 @@ function init () {
           var minutes = hours[ 1 ].split("m").length > 1 ? hours[ 1 ].split("m") : [ 0, hours[ 1 ].split("m")[ 0 ] ];
           var seconds = minutes[ 1 ].split("s")[ 0 ] ? minutes[ 1 ].split("s")[ 0 ] : 0 || 0;
 
-          days = parseInt(days[0]);
-          hours = parseInt(hours[0]);
-          minutes = parseInt(minutes[0]);
+          days = parseInt(days[ 0 ]);
+          hours = parseInt(hours[ 0 ]);
+          minutes = parseInt(minutes[ 0 ]);
           seconds = parseInt(seconds);
 
           // Check time over 60s/60m/24h
