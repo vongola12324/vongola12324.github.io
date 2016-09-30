@@ -38,6 +38,12 @@ function init () {
     } else {
       // Add feature here
 
+      // C8763
+      if ("C8763" in aryPara) {
+        var url = "http://i.imgur.com/tqVvt49.gif";
+        document.getElementById("editable").innerHTML = "<img src=\"" + url + "\" style='width: 100%; height: auto;'/>"
+      }
+
       // Image Pad
       if ("image" in aryPara) {
         var imgUrl = decodeURI(aryPara[ "image" ]);
