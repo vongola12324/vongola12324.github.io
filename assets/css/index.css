@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+html, body, a, p, h1, h2, h3, h4, h5, h6, div, blockquote {
+    font-family: Lato,'Helvetica Neue', 'Noto Sans TC', Arial,Helvetica,sans-serif !important;
+}
+
+div.blur {
+    filter: blur(5px);
+}
+
+div.bg {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background: url("../img/index-bg.jpg") no-repeat fixed center;
+}
+
+.white {
+    color: white !important;
+}
+
+body > div.segment {
+    z-index: 2 !important;
+    padding-top: 70px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.ui.header.massive {
+    font-size: 3em !important;
+}
+
+blockquote {
+    /*background: #f9f9f9;*/
+    border-left: 10px solid orange;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    color: white;
+    font-size: 1.3em;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    color: white;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, black, grey, black);
+    background-image: -moz-linear-gradient(left, black, grey, black);
+    background-image: -ms-linear-gradient(left, black, grey, black);
+    background-image: -o-linear-gradient(left, black, grey, black);
+    margin: 20px;
+}

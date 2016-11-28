@@ -2,33 +2,235 @@
 <html lang="zh-Hant-TW">
     <head>
         <meta charset="UTF-8">
-        <title>幽狼閣 | Vongola</title>
-        <!-- Metatag -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>幽狼閣 | Vongola</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="semantic/dist/semantic.min.css">
-        <style>
-            tr.current {
-                background-color: #dcffd1;
-            }
-            td.current {
-                background-color: #dcffd1;
-            }
-        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/index.css"/>
     </head>
-    <body class="pushable">
-        <div class="pusher">
-            <div class="ui inverted vertical masthead center aligned segment" style="height:100vh">
-                <div class="ui text container">
-                    <img class="ui centered circular medium image" src="img/header.jpg" alt="Header">
-                    <h1 class="ui inverted header">火文狼, Vongola</h1>
-                    <div class="ui orange basic button "><a href="course"><i class="idea icon"></i>課表</a></div>
+    <body>
+        <div class="blur bg"></div>
+        <div class="ui attached segment" style="min-height: 100%;background-color: rgba(0, 0, 0, 0.6);">
+            <div class="ui center aligned container">
+                <div class="ui center aligned stackable grid">
+                    <div class="six wide column">
+                        <img src="assets/img/avatars/HeadPic.jpg" class="ui large circular centered image">
+                    </div>
+                    <div class="ten wide column" style="padding-top: 10%;">
+                        <h1 class="ui massive white header">侯均靜</h1>
+                        <h2 class="ui white header">Vongola | 火文狼 | vongola12324</h2>
+                        <blockquote>
+                            凡人若想要勝過天才，就只能化身為修羅。
+                        </blockquote>
+                    </div>
+                </div>
+                <!--<div class="ui white divider" style="padding-top: 10px;"></div>-->
+                <div class="ui center aligned four column grid" style="padding-top: 10px;">
+                    <div class="column">
+                        <h2 class="ui small white icon header">
+                            <i class="marker icon"></i>
+                            台灣/台中
+                            <div class="white sub header">Live in Taiwan/Taichung!</div>
+                        </h2>
+                    </div>
+                    <div class="column">
+                        <h2 class="ui small white icon header">
+                            <i class="university icon"></i>
+                            逢甲大學
+                            <div class="white sub header">Feng Chia University</div>
+                        </h2>
+                    </div>
+                    <div class="column">
+                        <h2 class="ui small white icon header">
+                            <a href="course" target="_blank" class="white">
+                                <i class="calendar icon"></i>
+                                課表
+                                <div class="white sub header">Don't bother me!</div>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="column">
+                        <h2 class="ui small white icon header">
+                            <i class="configure icon"></i>
+                            雜七雜八小工具
+                            <div class="white sub header">Strange tools</div>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Javascript -->
-        <script src="js/jquery-2.2.4.min.js"></script>
-        <script src="semantic/dist/semantic.min.js"></script>
+        <div class="ui attached center aligned segment" style="min-height: 100%;background-color: rgba(0, 0, 0, 0.5);">
+            <h2 class="ui white large icon header">
+                <i class="olive code icon"></i>
+                出來混，總是要還的！
+                <div class="white sub header">技能點就算太多也別亂點...(ry</div>
+            </h2>
+            <div class="ui two column middle aligned stackable grid" style="padding-top: 20px;">
+                <div class="column">
+                    <h3 class="ui white small icon header">
+                        <i class="book icon"></i>
+                        技能點
+                    </h3>
+                </div>
+                <div class="left aligned column">
+                    <div class="ui white relaxed divided list">
+                        <div class="item">
+                            <i class="large terminal middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">C, C++, Java</p>
+                                <div class="white description">The basic in university!</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large star middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">Python, NodeJS</p>
+                                <div class="white description">Learn it by myself.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large html5 middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">HTML5, CSS3, Javascript</p>
+                                <div class="white description">Front-end, often using Semantic-UI and JQuery!</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large travel middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">PHP, ASP.NET</p>
+                                <div class="white description">Back-end, often using Laravel! ♥</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large database middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">MySQL, Redis</p>
+                                <div class="white description">Database management, often using MariaDB!</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large server middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">Ubuntu, CentOS, ArchLinux, MacOS</p>
+                                <div class="white description">Unix-like OS with services maintaining!</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large spy middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">Information Security</p>
+                                <div class="white description">Let me find your password!</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="large computer middle aligned icon"></i>
+                            <div class="content">
+                                <p class="white header">PC, Server, Mobile</p>
+                                <div class="white description">Hardware maintaining!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui attached segment" style="padding-bottom: 20px;background-color: rgba(25, 25, 25, 0.9);">
+            <div class="ui three column center aligned divided stackable grid">
+                <div class="row">
+                    <div class="column">
+                        <h2 class="ui small center aligned white icon header">
+                            <i class="browser icon"></i>
+                            網站服務
+                        </h2>
+                        <div class="ui animated white divided list">
+                            <div class="item">
+                                <a href="https://hackersir.org" target="_blank" class="white">黑客社社網</a>
+                            </div>
+                            <div class="item">
+                                <a href="https://isweek.hackersir.org" target="_blank" class="white">2015逢甲大學資安週</a>
+                            </div>
+                            <div class="item">
+                                <a href="https://voting.hackersir.org" target="_blank" class="white">2015學生會三合一選舉</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h2 class="ui small center aligned white icon header">
+                            <i class="translate icon"></i>
+                            翻譯專案
+                        </h2>
+                        <div class="ui animated white divided list">
+                            <div class="item">
+                                <a href="https://github.com/vongola12324/git-it-electron" class="white">Git-it(Desktop Version)</a>
+                            </div>
+                            <div class="item">
+                                <a href="https://github.com/vongola12324/LogViewer" class="white">Log Viewer(for Laravel)</a>
+                            </div>
+                            <div class="item">
+                                <a href="https://github.com/vongola12324/Psi" class="white">Psi(Mincraft Mod)</a>
+                            </div>
+                            <div class="item">
+                                <a href="https://github.com/vongola12324/MCEdit-Unified" class="white">MCEdit(Mincraft Mod)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h2 class="ui small center aligned white icon header">
+                            <i class="file code outline icon"></i>
+                            其他工具
+                        </h2>
+                        <div class="ui animated white divided list">
+                            <div class="item">
+                                <a href="https://github.com/vongola12324/TANetRoamer-desktop" class="white">TANet漫遊登入器(協作)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="ui center aligned equal width stackable grid">
+                <div class="column">
+                    <h2 class="ui small icon header">
+                        <a href="mailto:vongola12324+website@coder.tw" target="_blank" class="white">
+                            <i class="olive mail icon"></i>
+                            vongola12324[at]coder.tw
+                        </a>
+                    </h2>
+                </div>
+                <div class="column">
+                    <h2 class="ui small icon header">
+                        <a href="https://twitter.com/vongola12324" target="_blank" class="white">
+                            <i class="teal twitter icon"></i>
+                            火文狼/vongola12324
+                        </a>
+                    </h2>
+                </div>
+                <div class="column">
+                    <h2 class="ui small icon header">
+                        <a href="https://www.youtube.com/user/vongola12324" target="_blank" class="white">
+                            <i class="red youtube icon"></i>
+                            火文狼/vongola12324
+                        </a>
+                    </h2>
+                </div>
+                <div class="column">
+                    <h2 class="ui small icon header">
+                        <a href="https://github.com/vongola12324" target="_blank" class="white">
+                            <i class="github icon"></i>
+                            火文狼/vongola12324
+                        </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="ui attached white center aligned segment"
+             style="background-color: rgba(25, 25, 25, 0.9);padding-top: 1em!important;">
+            <p>Copyright &copy; 2016 Vongola/火文狼, reference from <a href="https://pastleo.me">PastLeo</a>.</p>
+        </div>
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
     </body>
 </html>
