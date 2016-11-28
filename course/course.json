@@ -1,0 +1,191 @@
+{
+  "1-2": {
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
+  },
+  "1-3": {
+    "name": "編譯器",
+    "classroom": "資電403",
+    "teacher": "陳青文",
+    "status": 0
+  },
+  "1-4": {
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
+  },
+  "2-1": {
+    "name": "計算機概論實習(一)",
+    "classroom": "紀念207",
+    "teacher": "蔡明峰",
+    "status": 1
+  },
+  "2-2": {
+    "name": "計算機概論實習(一)",
+    "classroom": "紀念207",
+    "teacher": "蔡明峰",
+    "status": 1
+  },
+  "2-3": {
+    "name": "資電概論與倫理",
+    "classroom": "資電B22",
+    "teacher": "蔡明峰/洪維志/陳奕中",
+    "status": 1
+  },
+  "2-4": {
+    "name": "資電概論與倫理",
+    "classroom": "資電B22",
+    "teacher": "蔡明峰/洪維志/陳奕中",
+    "status": 1
+  },
+  "2-6": {
+    "name": "編譯器",
+    "classroom": "資電104",
+    "teacher": "陳青文",
+    "status": 0
+  },
+  "2-7": {
+    "name": "編譯器",
+    "classroom": "資電104",
+    "teacher": "陳青文",
+    "status": 0
+  },
+  "2-9": {
+    "name": "雲端計算",
+    "classroom": "科航202",
+    "teacher": "鄭耀東",
+    "status": 0
+  },
+  "2-10": {
+    "name": "雲端計算",
+    "classroom": "科航202",
+    "teacher": "鄭耀東",
+    "status": 0
+  },
+  "2-11": {
+    "name": "計概實習課輔",
+    "classroom": "資電235",
+    "teacher": "---",
+    "status": 1
+  },
+  "2-12": {
+    "name": "計概實習課輔",
+    "classroom": "資電235",
+    "teacher": "---",
+    "status": 1
+  },
+  "2-13": {
+    "name": "計概實習課輔",
+    "classroom": "資電235",
+    "teacher": "---",
+    "status": 1
+  },
+  "3-3": {
+    "name": "漫畫日語",
+    "classroom": "資電411",
+    "teacher": "李金娟",
+    "status": 0
+  },
+  "3-4": {
+    "name": "漫畫日語",
+    "classroom": "資電411",
+    "teacher": "李金娟",
+    "status": 0
+  },
+  "3-8": {
+    "name": "雲端計算",
+    "classroom": "語文405",
+    "teacher": "鄭耀東",
+    "status": 0
+  },
+  "3-11": {
+    "name": "資料結構實習",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
+  },
+  "3-12": {
+    "name": "資料結構實習",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
+  },
+  "3-13": {
+    "name": "資料結構實習",
+    "classroom": "資電B19",
+    "teacher": "陳奕中",
+    "status": 1
+  },
+  "4-6": {
+    "name": "作業系統",
+    "classroom": "資電B04",
+    "teacher": "賴坤助",
+    "status": 0
+  },
+  "4-7": {
+    "name": "作業系統",
+    "classroom": "資電B04",
+    "teacher": "賴坤助",
+    "status": 0
+  },
+  "4-8": {
+    "name": "作業系統",
+    "classroom": "資電B04",
+    "teacher": "賴坤助",
+    "status": 0
+  },
+  "4-10": {
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "蔡明峰",
+    "status": 1
+  },
+  "5-2": {
+    "name": "演算法設計與分析",
+    "classroom": "資電205",
+    "teacher": "許芳榮",
+    "status": 3
+  },
+  "5-3": {
+    "name": "演算法設計與分析",
+    "classroom": "資電205",
+    "teacher": "許芳榮",
+    "status": 3
+  },
+  "5-4": {
+    "name": "演算法設計與分析",
+    "classroom": "資電205",
+    "teacher": "許芳榮",
+    "status": 3
+  },
+  "5-6": {
+    "name": "班級活動",
+    "classroom": "資電306",
+    "teacher": "黃志銘",
+    "status": 0
+  },
+  "5-8": {
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "黃志銘",
+    "status": 1
+  },
+  "5-9": {
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "黃志銘",
+    "status": 1
+  },
+  "5-10": {
+    "name": "計算機概論實習(一)",
+    "classroom": "資電B19",
+    "teacher": "黃志銘",
+    "status": 1
+  },
+  "Other": [
+    "專題研究(二)"
+  ]
+}
