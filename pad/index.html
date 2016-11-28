@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>A Pad</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100">
+        <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosanstc.css");">
+        <link rel="stylesheet" href="/assets/css/sweetalert.min.css">
+        <link rel="stylesheet" href="/assets/css/pad.css">
+    </head>
+    <body>
+        <div class="container" onclick="document.getElementById('editable').contentEditable='true';">
+            <div class="content" id="editable" onclick="editable()">Loading...</div>
+            <br id="splitDiv" style="display: none">
+            <div class="content" style="font-size: 32px;">
+                <a href="javascript:void(0)" class="start button" id="start" style="display: none;">Start</a>
+                <a href="javascript:void(0)" class="stop button" id="stop" style="display: none;">Stop</a>
+            </div>
+        </div>
+        <script src="/assets/js/sweetalert.min.js"></script>
+        <script src="/assets/js/pad.js"></script>
+        <script>
+          init();
+        </script>
+    </body>
+</html>
