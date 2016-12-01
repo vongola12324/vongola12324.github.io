@@ -1,39 +1,31 @@
 function parseClassInfo() {
-  $.getJSON('/course/course.json', function(lessonData) {
-    for(let key in lessonData)
-    {
-      const data = lessonData[ key ];
-      if (key == "Other"){
-        for(let item in data){
-          $("ul#Other").append("<li>"+data[item]+"</li>")
-        }
-      } else {
-        if ($("td#"+key).html() != ""){
-          $("td#"+key).html("<i class=\"warning sign icon\"></i>衝突<i class=\"warning sign icon\"></i>");
-          $("td#"+key).addClass("error");
-        } else {
-          $("td#"+key).html(data["name"]+"<br>"+data["classroom"]+"<br>"+data["teacher"]);
-          if(data.hasOwnProperty("code")){
-            $("td#"+key).attr("data-content", "選課代碼："+data["code"]);
-            $("td#"+key).attr("data-variation", "inverted");
-            $("td#"+key).addClass("popup inver");
-            $("td.popup").popup();
-          }
-          const status = data[ "status" ];
-          if(status == 0){
-            $("td#"+key).addClass("current");
-          } else if (status == 1) {
-            $("td#"+key).addClass("ta");
-          } else if (status == 2) {
-            $("td#"+key).addClass("club");
-          } else if (status == 3){
-            $("td#"+key).addClass("master");
-          } else {
-            $("td#"+key).addClass("unsure");
-          }
-        }
-      }
-    }
-  });
+    $.getJSON('/course/course.json', function (lessonData) {
+        $.each(lessonData, function (key, val) {
+            if (key == "Other") {
+                $.each(val, function (k, v) {
+                    $("ul#Other").append("<li>" + v + "</li>")
+                });
+            } else {
+                let target = $("#" + key);
+                if (target.html() != "") {
+                    target.html("<i class=\"warning sign icon\"></i>衝突<i class=\"warning sign icon\"></i>");
+                    target.addClass("Error");
+                } else {
+                    target.html(val["name"] + "<br>" + val["classroom"] + "<br>" + val["teacher"]);
+                    target.addClass(getClass(val["status"]));
+                    if (val.hasOwnProperty("code")) {
+                        target.attr("data-content", "選課代碼：" + val["code"]);
+                        target.attr("data-variation", "inverted");
+                        target.addClass("popup inver");
+                        target.popup();
+                    }
+                }
+            }
+        });
+    });
+}
 
+function getClass(status) {
+    const statusTable = JSON.parse('{"-1": "unsure", "0": "current", "1": "ta", "2": "club", "3": "master"}');
+    return status in Object.keys(statusTable) ? statusTable[status] : "Error";
 }
