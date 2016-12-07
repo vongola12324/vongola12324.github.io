@@ -23,6 +23,8 @@ function init () {
       // Time Pad
       if ("countdown" in aryPara) {
         document.title = "Timer: Countdown";
+        document.body.style.backgroundColor = "#2E2E2E";
+        textArea.style.color = "white";
         if (aryPara[ "countdown" ] === "undefined") {
           setTime(0, 0, 0, 30);
         } else {
@@ -49,7 +51,6 @@ function init () {
             days += 1;
             hours -= 24;
           }
-
           setTime(days, hours, minutes, seconds);
 
         }
@@ -89,13 +90,6 @@ function init () {
         showClock();
       }
     }
-
-    // FIXME: If not use setTimeout, the "It works" will show before timer.
-    setTimeout(function () {
-      if (document.getElementById("editable").innerText == "Loading...") {
-        document.getElementById("editable").innerText = "It works!";
-      }
-    }, 1000)
 }
 function editable () {
   let div = document.getElementById("editable");
@@ -116,10 +110,19 @@ function showClock () {
 }
 
 function showCountdown (days, hours, mins, secs) {
-  let target = document.getElementById("editable");
+  let target = document.getElementById("editable"), i = 0;
+  const timesUp = ["Time's up!", "時間到！", "時間切れ！"];
   target.innerText = "";
   if (days == 0 && hours == 0 && mins == 0 && secs == 0) {
-    target.innerText = "Time's up!";
+      target.innerHTML =  timesUp[i] ;
+      i++;
+      setInterval(function () {
+        target.innerHTML =  timesUp[i] ;
+        i++;
+        if (i>=timesUp.length) {
+            i = 0;
+        }
+    }, 1500);
     document.title = "Timer: Time's up!";
     document.getElementById("splitDiv").style.display = "none";
     document.getElementById("stop").click();
@@ -189,7 +192,7 @@ function countdown () {
       if (s % 2 == 0) {
           document.getElementById("editable").style.color = "red";
       } else {
-          document.getElementById("editable").style.color = "black";
+          document.getElementById("editable").style.color = "white";
       }
   }
 }
@@ -232,9 +235,9 @@ function timing () {
 
 function setTime (days, hours, mins, secs) {
   let target = document.getElementById("editable");
-  target.innerHTML = "";
+  target.innerHTML = "<strong>";
   if (days > 0) {
-    target.innerHTML = days + "day(s), "
+    target.innerHTML += days + "day(s), "
   }
   if (hours >= 0) {
     target.innerHTML += ("0" + hours).slice(-2) + " : ";
@@ -245,4 +248,5 @@ function setTime (days, hours, mins, secs) {
   if (secs >= 0) {
     target.innerHTML += ("0" + secs).slice(-2);
   }
+  target.innerHTML += "</strong>";
 }
