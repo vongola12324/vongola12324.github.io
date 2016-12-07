@@ -52,14 +52,6 @@ function init () {
 
           setTime(days, hours, minutes, seconds);
 
-          // Check if last minute
-          if (days == 0 && hours == 0 && minutes == 0) {
-            if (seconds % 2 == 0) {
-                document.getElementById("editable").style.color = "red";
-            } else {
-                document.getElementById("editable").style.color = "black";
-            }
-          }
         }
         document.getElementById("editable").style.display = "block";
         start_button.style.display = "inline-block";
@@ -192,6 +184,14 @@ function countdown () {
     }
   }
   showCountdown(d, h, m, s);
+  // Check if last minute
+  if (d == 0 && h == 0 && m == 0) {
+      if (s % 2 == 0) {
+          document.getElementById("editable").style.color = "red";
+      } else {
+          document.getElementById("editable").style.color = "black";
+      }
+  }
 }
 
 function timing () {
