@@ -3,6 +3,7 @@ function init () {
   let getPara, ParaVal;
   let aryPara = [];
   let timeInv;
+  let textArea = document.getElementById("editable");
   let start_button = document.getElementById("start");
   let stop_button = document.getElementById("stop");
 
@@ -50,8 +51,17 @@ function init () {
           }
 
           setTime(days, hours, minutes, seconds);
+
+          // Check if last minute
+          if (days == 0 && hours == 0 && minutes == 0) {
+            if (seconds % 2 == 0) {
+                document.getElementById("editable").style.color = "red";
+            } else {
+                document.getElementById("editable").style.color = "black";
+            }
+          }
         }
-        document.getElementById("splitDiv").style.display = "block";
+        document.getElementById("editable").style.display = "block";
         start_button.style.display = "inline-block";
         stop_button.addEventListener('click', function () {
           start_button.style.display = "inline-block";
@@ -68,7 +78,7 @@ function init () {
       } else if ("timing" in aryPara) {
         document.title = "Timer: Timing";
         setTime(0, 0, 0, 0);
-        document.getElementById("splitDiv").style.display = "block";
+        document.getElementById("editable").style.display = "block";
         start_button.style.display = "inline-block";
         stop_button.addEventListener('click', function () {
           start_button.style.display = "inline-block";
