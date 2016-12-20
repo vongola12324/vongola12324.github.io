@@ -1,22 +1,29 @@
 function parseClassInfo() {
     const param = parseParam();
     let filename;
+    let header;
     if (param && isAvailable(param)) {
         filename = param + "_course.json";
+        header = param.substr(0, 3)+ "學年度第" + param.substr(4, 1) + "學期課程資訊(課表)";
     } else {
         const today=new Date();
         const month = today.getMonth();
         const year = today.getFullYear();
         if (month+1>=2 && month+1 <= 7) {
             filename = (year-1911-1) + "_2_course.json";
+            header = (year-1911-1) + "學年度第2學期課程資訊(課表)";
         } else {
             if (month < 2) {
                 filename = (year-1911-1) + "_1_course.json";
+                header = (year-1911-1);
             } else {
                 filename = (year-1911) + "_1_course.json";
+                header = (year-1911);
             }
+            header +="學年度第1學期課程資訊(課表)";
         }
     }
+    $('#header').text(header);
     $.getJSON('/course/json/'+filename, function (lessonData) {
         $.each(lessonData, function (key, val) {
             if (key == "Other") {
