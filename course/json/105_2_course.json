@@ -1,0 +1,58 @@
+{
+  "1-11": {
+    "name": "物聯網概論",
+    "classroom": "資電402",
+    "teacher": "陳家豪",
+    "status": -1,
+    "code": 2328,
+    "point": 3
+  },
+  "1-12": {
+    "name": "物聯網概論",
+    "classroom": "資電402",
+    "teacher": "陳家豪",
+    "status": -1,
+    "code": 2328,
+    "point": 3
+  },
+  "1-13": {
+    "name": "物聯網概論",
+    "classroom": "資電402",
+    "teacher": "陳家豪",
+    "status": -1,
+    "code": 2328,
+    "point": 3
+  },
+  "2-3": {
+    "name": "寬頻網路",
+    "classroom": "語文306",
+    "teacher": "竇其仁",
+    "status": -1,
+    "code": 2276,
+    "point": 3
+  },
+  "2-4": {
+    "name": "寬頻網路",
+    "classroom": "語文306",
+    "teacher": "竇其仁",
+    "status": -1,
+    "code": 2276,
+    "point": 3
+  },
+  "4-2": {
+    "name": "寬頻網路",
+    "classroom": "語文206",
+    "teacher": "竇其仁",
+    "status": -1,
+    "code": 2276,
+    "point": 3
+  },
+  "5-6": {
+    "name": "班級活動",
+    "classroom": "資電306",
+    "teacher": "黃志銘",
+    "status": 0,
+    "code": 2276,
+    "point": 0
+  }
+}
