@@ -1,3 +1,9 @@
+
+function isAvailable(v) {
+    const course = ["105_1", "105_2"];
+    return course.indexOf(v) != -1;
+}
+
 function parseClassInfo() {
     const param = parseParam();
     let filename;
@@ -24,48 +30,77 @@ function parseClassInfo() {
         }
     }
     $('#header').text(header);
-    $.getJSON('/course/json/'+filename, function (lessonData) {
-        $.each(lessonData, function (key, val) {
-            if (key == "Other") {
-                $.each(val, function (k, v) {
-                    $("ul#Other").append("<li>" + v + "</li>")
-                });
-            } else {
-                let target = $("#" + key);
-                if (target.html() != "") {
-                    target.html("<i class=\"warning sign icon\"></i>衝突<i class=\"warning sign icon\"></i>");
-                    target.addClass("Error");
-                } else {
-                    target.html(val["name"] + "<br>" + val["classroom"] + "<br>" + val["teacher"]);
-                    target.addClass(getClass(val["status"]));
-                    let popupContent = "";
-                    if (val.hasOwnProperty("code")) {
-                        if(popupContent) {
-                            popupContent += "<br>";
-                        }
-                        popupContent += "選課代碼：" + val["code"];
-                    }
-                    if (val.hasOwnProperty("point")) {
-                        if(popupContent) {
-                            popupContent += "<br>";
-                        }
-                        popupContent += "學分數：" + val["point"];
-                    }
-                    if (popupContent) {
-                        target.attr("data-html", popupContent);
-                        target.attr("data-variation", "inverted");
-                        target.addClass("popup inver");
-                        target.popup();
-                    }
-                }
-            }
-        });
+    $.getJSON('../course/json/'+filename, function (lessonData) {
+        const TimeData = lessonData["Time"], CourseData = lessonData["Course"];
+        setTimeData(TimeData);
+        setCourseData(CourseData);
     });
 }
 
-function getClass(status) {
-    const statusTable = JSON.parse('{"-1": "unsure", "0": "current", "1": "ta", "2": "club", "3": "master"}');
+function getSyle(statusCode, forCode) {
+    const statusTable = JSON.parse('{"-99": "unsure", "-1": "club", "0": "student", "1": "ta"}');
+    const forCodeTable = JSON.parse('{"-1": "unknown", "-1": "club", "0": "bachelor", "1": "master", "2": "doctor"}');
+    return (statusCode in statusTable) && (forCode in forCodeTable) ? (statusTable[statusCode] + " " + forCodeTable[forCode]) : "Error";
+}
+
+function getStatus(status) {
+    const statusTable = JSON.parse('{"-99": "未確認", "-1": "社團課程", "0": "學生", "1": "教學助理"}');
     return status in statusTable ? statusTable[status] : "Error";
+}
+
+function getFor(forCode) {
+    const forCodeTable = JSON.parse('{"-1": "未知", "-1": "課外", "0": "學士", "1": "碩士", "2": "博士"}');
+    return forCode in forCodeTable ? forCodeTable[forCode] : "Error";
+}
+
+function setTimeData(TimeData) {
+    for (let key in TimeData) {
+        $("td#t"+key).html("第"+key+"節<br/>"+TimeData[key]);
+    }
+}
+
+function setCourseData(CourseData) {
+    let noTimeCourse = 0;
+    for (let key in CourseData) {
+        if (CourseData.hasOwnProperty(key)) {
+            const Course = CourseData[key];
+            const TimeData = Course["time"];
+            if ($.isEmptyObject(TimeData)) {
+                $('ul#Other').append('<li>'+Course["name"]+'</li>');
+                noTimeCourse += 1;
+            } else {
+                for (let time in TimeData) {
+                    if (TimeData.hasOwnProperty(time)) {
+                        let target = $("td#"+time);
+                        if (target.html() != "") {
+                            target.html("<i class=\"warning sign icon\"></i>衝突<i class=\"warning sign icon\"></i>");
+                            target.addClass("Error");
+                        } else {
+                            target.html(Course["name"] + "<br>" + TimeData[time] + "<br>" + Course["teacher"]);
+                            target.addClass(getSyle(Course["status"], Course["for"]));
+                            let popupContent = "";
+                            if (Course.hasOwnProperty("for")) {
+                                popupContent += getFor(Course["for"]) + "課程 / " + getStatus(Course["status"]) + "<br>";
+                            }
+                            popupContent += "選課代號：" + key + "<br>";
+                            if (Course.hasOwnProperty("point")) {
+                                popupContent += "學分數：" + Course["point"];
+                            }
+                            if (popupContent) {
+                                target.attr("data-html", popupContent);
+                                target.attr("data-variation", "inverted");
+                                target.addClass("popup inver");
+                                target.popup();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (noTimeCourse === 0) {
+        $('div#noTime').hide();
+    }
 }
 
 function parseParam() {
@@ -86,9 +121,4 @@ function parseParam() {
     } else {
         return false;
     }
-}
-
-function isAvailable(v) {
-    const course = ["105_1", "105_2"];
-    return course.indexOf(v) != -1;
 }
