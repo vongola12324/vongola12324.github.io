@@ -15,7 +15,7 @@
             "name": "資料挖掘",
             "teacher": "楊東麟、許懷中",
             "for": 1,
-            "status": -99,
+            "status": 0,
             "point": 3,
             "time": {
                 "1-6": "資電311",
@@ -52,7 +52,7 @@
             "name": "高等軟體工程",
             "teacher": "陳錫民",
             "for": 1,
-            "status": -99,
+            "status": 0,
             "point": 3,
             "time": {
                 "3-2": "資電205",
