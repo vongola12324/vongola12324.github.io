@@ -7,7 +7,7 @@ function init() {
     let start_button = document.getElementById("start");
     let stop_button = document.getElementById("stop");
 
-    if (strUrl.indexOf("?") != -1) {
+    if (strUrl.indexOf("?") !== -1) {
         let getSearch = strUrl.split("?");
         getPara = getSearch[1].split("&");
         for (let i = 0; i < getPara.length; i++) {
@@ -38,9 +38,14 @@ function init() {
             });
         } else {
             // Add feature here
+            if (encodeURI("西瓜榴槤雞") in aryPara || encodeURI("西瓜榴槤擊") in aryPara || encodeURI("星光連流擊") in aryPara) {
+                let url = "http://i.imgur.com/tqVvt49.gif";
+                textArea.innerHTML = "你查詢的是「星爆氣流斬」嗎？<br><img src=\"" + url + "\" style='width: 100%; height: auto;'/>"
+                textArea.style = "font-size: 0.5em";
+            }
 
             // C8763
-            if ("C8763" in aryPara) {
+            if ("C8763" in aryPara || encodeURI("星爆氣流斬") in aryPara) {
                 let url = "http://i.imgur.com/tqVvt49.gif";
                 document.getElementById("editable").innerHTML = "<img src=\"" + url + "\" style='width: 100%; height: auto;'/>"
             }
@@ -49,7 +54,7 @@ function init() {
             if ("image" in aryPara) {
                 let imgUrl = decodeURI(aryPara["image"]);
                 imgUrl = imgUrl.replace(/%3A/g, ':').replace(/%2F/g, '/');
-                if (imgUrl != "undefined") {
+                if (imgUrl !== "undefined") {
                     textArea.innerHTML = "<img src=\"" + imgUrl + "\" style='width: 100%; height: auto;'/>"
                 } else {
                     textArea.innerText = "404<br>Image Not Found!";
@@ -69,10 +74,25 @@ function init() {
             }
 
             // Default Text
-            if (arrPara.size() == 0) {
+            if (aryPara.length === 0) {
                 textArea.innerText = "It Works!";
             }
         }
+    } else {
+        let cssId = 'SAOFont';
+        if (!document.getElementById(cssId))
+        {
+            let head  = document.getElementsByTagName('head')[0];
+            let link  = document.createElement('link');
+            link.id   = cssId;
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '../assets/css/SAOFont.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }
+        textArea.innerHTML = "Welcome to<br>Sword Art Online";
+        textArea.style = "font-family: 'SAOUI';"
     }
 }
 function editable() {

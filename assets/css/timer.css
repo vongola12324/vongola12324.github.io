@@ -95,3 +95,18 @@ body {
     background-color: #ff4335;
     color: #FFFFFF;
 }
+a {
+    text-decoration: none;
+    color: orange;
+}
+a:hover {
+    color: red;
+}
+.no_touch {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}

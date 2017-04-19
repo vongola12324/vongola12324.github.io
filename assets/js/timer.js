@@ -15,8 +15,6 @@ function init() {
             aryPara.push(ParaVal[0]);
             aryPara[ParaVal[0]] = decodeURI(ParaVal[1]);
         }
-
-
         // Add feature here
 
 
@@ -85,10 +83,19 @@ function init() {
                 stop_button.style.display = "inline-block";
                 timeInv = setInterval(timing, 1000);
             });
-        } else if ("timer" in aryPara) {
+        } else if ("clock" in aryPara) {
             document.title = "Clock";
             showClock();
         }
+    }
+    if (aryPara && aryPara.length === 0){
+        document.title = "Help";
+        let target = document.getElementById("editable");
+        target.innerHTML = "You can choice:<br><a href='./?clock'>Clock</a>, <a href='./?timing'>Timing</a> or <a href='./?countdown'>Countdown</a>"
+        target.style = "font-size: 0.5em;";
+        target.contentEditable = false;
+    } else {
+        editable()
     }
 }
 function editable() {
@@ -160,7 +167,6 @@ function countdown() {
         d += 1;
         h -= 24;
     }
-
     if (s > 0 || m > 0 || h > 0 || d > 0) {
         s -= 1;
     }
